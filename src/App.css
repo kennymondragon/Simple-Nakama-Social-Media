@@ -1,0 +1,601 @@
+:root {
+  --mediaWhite: #e0e1dd;
+  --background: #0d1b2a;
+  --navBackground: rgba(0, 0, 0, 0.63);
+}
+
+.wholeApp {
+  background-color: var(--background);
+  background-size: cover;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.primaryLogo {
+  max-width: 300px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: var(--mediaWhite);
+}
+
+/* NAV */
+
+.wholeNav {
+  color: white;
+  background-color: var(--navBackground);
+  padding-left: 7%;
+  padding-right: 7%;
+}
+.innerNav {
+  max-width: 1800px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* FORM */
+
+.form {
+  color: var(--mediaWhite);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  padding: 60px;
+}
+.form h2 {
+  margin: 0;
+}
+.infoForm {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+/* FOOTER */
+
+.wholeFooter {
+  color: var(--mediaWhite);
+  display: flex;
+  justify-content: start;
+  padding: 7px;
+}
+.wholeFooter p {
+  font-size: smaller;
+}
+
+/* -----------DASHBOARD------------ */
+
+.wholeDash {
+  min-height: 600px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+.leftDash {
+  width: 100%;
+  min-width: 400px;
+}
+
+/* title */
+
+.wholeTitle {
+  width: 90%;
+  min-width: 300px;
+  color: var(--mediaWhite);
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* user card */
+
+.userCardOuter,
+.newsFeed {
+  width: 90%;
+  min-width: 400px;
+  height: 300px;
+  background-color: var(--mediaWhite);
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+.username {
+  color: black;
+}
+.avatarImageContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #0d1b2a;
+  aspect-ratio: 1/1;
+  border-radius: 75%;
+  width: 40%;
+  max-width: 150px;
+}
+.avatarImageOuterContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* news feed */
+
+.newsFeed {
+  margin-top: 20px;
+  height: auto;
+  min-height: 400px;
+}
+
+/* friends list */
+
+.outerWholeFriendsList {
+  margin-right: 6%;
+  margin-top: 20px;
+}
+.wholeFriendsList {
+  background-color: var(--mediaWhite);
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  height: 500px;
+  overflow-y: auto;
+}
+.addFriendButton {
+  margin-top: 7px;
+  width: 100%;
+  background-color: #1b263b;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  display: inline-block;
+  color: #fff;
+  padding: 6px 24px;
+}
+.addFriendButton:hover {
+  color: var(--background);
+  background-color: var(--mediaWhite);
+}
+.addFriendButton:active {
+  position: relative;
+  top: 1px;
+}
+.addFriendTextbox {
+  width: 97%;
+}
+/*WARN: friend request card css has yet to be updated */
+.friendCard {
+  color: var(--mediaWhite);
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(36, 43, 65);
+  border-radius: 10px;
+  margin: 10px;
+}
+.friendCard img {
+  width: 50px;
+}
+.friendReqCard {
+  display: flex;
+  background-color: red;
+}
+
+.friendAvatarImage {
+  width: 20%;
+}
+
+.friendReqOpt {
+  margin: auto;
+}
+
+/* ------------- Loading ------------ */
+.loading-div {
+  display: flex;
+  justify-content: center;
+}
+.loading-btn {
+  background-color: transparent;
+  border-style: none;
+}
+.loading-logo {
+  animation: rotation 2s infinite linear;
+  display: flex;
+  margin: auto;
+  color: white;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* ------------- Notifications ------------ */
+.notification-section {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  width: 300px;
+}
+
+.notification-card {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  animation: SlideLeft 0.5s;
+  animation-fill-mode: forwards;
+  width: 300px;
+}
+
+.notification-card.exit {
+  animation: SlideLeftExit 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes SlideLeft {
+  0% {
+    margin-left: 120%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes SlideLeftExit {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 120%;
+  }
+}
+
+.notification-card p {
+  margin: 0;
+  padding: 5px;
+}
+
+.notification-card {
+  background-color: gray;
+}
+.notification-card .time-bar {
+  height: 10px;
+  background-color: darkgray;
+}
+
+.notification-card.success {
+  background-color: lime;
+}
+
+.notification-card.error {
+  background-color: red;
+}
+
+.notification-card.success .time-bar {
+  height: 10px;
+  background-color: green;
+}
+
+.notification-card.error .time-bar {
+  height: 10px;
+  background-color: maroon;
+}
+
+/*-------------- settings -----------------*/
+/*TODO: Clean up this CSS code... */
+.wholeSettings {
+  display: flex;
+  min-height: 84vh;
+}
+
+.leftSettings {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightSettings {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settingsOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--mediaWhite);
+  min-height: 290px;
+  width: 90%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.settingsOptionbtn {
+  font-size: 25px;
+  margin: auto;
+  width: 200px;
+  background-color: var(--mediaWhite);
+  border: none;
+  display: inline-block;
+  padding: 6px 24px;
+  border-radius: 20px;
+  border-style: solid;
+}
+.settingsOptionbtn:hover {
+  color: var(--mediaWhite);
+  background-color: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.active {
+  color: var(--mediaWhite);
+  background-color: black;
+}
+.rightSettingsContainer {
+  min-height: 290px;
+  background-color: var(--mediaWhite);
+  width: 90%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+.accountOptionsContainer {
+  justify-content: center;
+}
+.rightSettings h2 {
+  font-size: 40px;
+}
+
+/* ----------- Modal ----------- */
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: clamp(50%, 700px, 90%);
+  height: min(50%, 300px);
+  background-color: var(--mediaWhite);
+  margin: auto;
+  padding: 0 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.walletbtn {
+}
+
+.walleticon {
+  width: 5em;
+  aspect-ratio: 1;
+  padding: 7px;
+}
+
+.walletbtncontainer {
+  display: flex;
+}
+
+/*--------- Assets --------*/
+.assetimage {
+  width: 7em;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.assetcontainer {
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.assetname {
+}
+
+.assetquantity {
+}
+.assetcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0.75, 0, 0.25);
+  width: 200px;
+  margin: 7px;
+  padding-top: 10px;
+  border-radius: 7px;
+}
+
+.walletmanagementbtn {
+  background-color: var(--mediaWhite);
+  border: 1px solid #fff;
+  border-radius: 7px;
+}
+
+/*----------------------------- Messages -----------------------------*/
+.contactsBox {
+}
+
+.contactsBoxHeader {
+  background-color: red;
+  border-radius: 15px 15px 0px 0px;
+  display: flex;
+  justify-content: right;
+  width: 15em;
+  height: 2em;
+  max-width: inherit;
+}
+
+.contactsBoxContent {
+  background-color: white;
+}
+
+.contactsBoxFriendCard {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contactsBoxFriendCard:hover {
+  background-color: gray;
+}
+
+.contactsBoxFriendImg {
+  width: 3em;
+  aspect-ratio: 1;
+}
+
+.chatboxes-container {
+  pointer-events: all;
+  max-width: 15em;
+}
+
+.chatBoxMessageContainer {
+  background-color: white;
+  max-height: 24em;
+  max-width: inherit;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.chatMessage {
+  background-color: white;
+  max-width: 255px;
+  word-wrap: break-word;
+  margin-bottom: 12px;
+  line-height: relative;
+  padding: 0px 20px;
+  border-radius: 25px;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 25px;
+  }
+}
+.fromMe {
+  color: white;
+  background-color: #0B93F6;
+  align-self: flex-end;
+
+  &:before {
+    right: -7px;
+    width: 20px;
+    background-color: #0B93F6;
+    border-bottom-left-radius: 16px 14px;
+  }
+  &:after {
+    right: -26px;
+    width: 20px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+  }
+}
+.fromThem {
+  background-color: #e5e5ea;
+  color: black;
+  align-self:  flex-start;
+
+  &:before {
+    left: -7px;
+    width: 20px;
+    background-color: #e5e5ea;
+    border-bottom-left-radius: 16px;
+  }
+  &:after {
+    left: -26px;
+    width: 26px;
+    background-color: #e5e5ea;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.contacts {
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  pointer-events: all;
+}
+.chatOverlay {
+  max-height: 60%;
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.chatBoxInput {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*----------------------------- TEST ---------------------------------*/
+.test {
+  background-color: rgb(0, 0.75, 0, 0.25);
+}
+.test-light {
+  background-color: rgba(1, 1, 1, 0.25);
+}
+
+/* -------------MEDIA-------------- */
+
+@media screen and (max-width: 900px) {
+  .outerWholeFriendsList {
+    display: none;
+  }
+  .userCardOuter,
+  .newsFeed {
+    min-width: 300px;
+    height: 200px;
+  }
+  .avatarImageContainer {
+    width: 80px;
+  }
+  .leftSettings {
+    height: 100%;
+    width: 50%;
+  }
+
+  .rightSettings {
+    height: 100%;
+    width: 100%;
+  }
+}
